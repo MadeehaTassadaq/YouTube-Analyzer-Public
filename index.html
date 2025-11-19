@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YouTube Video Analyzer Web App</title>
+    <!-- Suppress Tailwind CDN warning -->
+    <script>
+      const originalWarn = console.warn;
+      console.warn = (...args) => {
+        if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com')) return;
+        originalWarn.apply(console, args);
+      };
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       /* Custom scrollbar for webkit browsers */
@@ -36,5 +44,6 @@
 </head>
   <body class="bg-gray-900 text-gray-100 antialiased min-h-screen">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

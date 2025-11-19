@@ -130,6 +130,12 @@ export const analyzeVideo = async (
     return result;
   } catch (error: any) {
     console.error("Analysis Error:", error);
+    
+    // Provide more helpful error messages for common Vercel issues
+    if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
+      throw new Error("Network Error: Could not connect to n8n. Check CORS settings on your webhook or disable AdBlockers.");
+    }
+    
     throw new Error(error.message || "Failed to connect to analysis service.");
   }
 };

@@ -1,7 +1,11 @@
 import { AnalysisResult } from './types';
 
 export const DEFAULT_WEBHOOK_KEY = 'n8n_webhook_url';
-export const DEFAULT_WEBHOOK_URL = 'https://learnaiagents.duckdns.org/webhook/ytube';
+
+// Allow environment variable override for Vercel deployments
+const ENV_WEBHOOK_URL = (typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.VITE_WEBHOOK_URL) || "";
+
+export const DEFAULT_WEBHOOK_URL = ENV_WEBHOOK_URL || 'https://learnaiagents.duckdns.org/webhook/ytube';
 
 export const MOCK_RESULT: AnalysisResult = {
   title: "The Future of Artificial Intelligence in 2025",
