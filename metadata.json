@@ -1,0 +1,5 @@
+{
+  "name": "YouTube Video Analyzer",
+  "description": "A powerful web app connected to n8n to extract summaries, main points, topics, and insights from YouTube videos.",
+  "requestFramePermissions": []
+}
