@@ -1,7 +1,7 @@
 import { AnalysisResult } from './types';
 
 export const DEFAULT_WEBHOOK_KEY = 'n8n_webhook_url';
-export const DEFAULT_WEBHOOK_URL = 'https://learnaiagents.duckdns.org/webhook-test/ytube';
+export const DEFAULT_WEBHOOK_URL = 'https://learnaiagents.duckdns.org/webhook/ytube';
 
 export const MOCK_RESULT: AnalysisResult = {
   title: "The Future of Artificial Intelligence in 2025",
